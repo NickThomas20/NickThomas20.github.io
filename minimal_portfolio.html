@@ -231,17 +231,14 @@
             width: 40px;
             height: 40px;
             object-fit: contain;
-            filter: grayscale(1) opacity(0.7);
             transition: all 0.3s ease;
-            /* Simple Icons are monochrome, so we'll colorize them */
-            fill: #666;
+            opacity: 0.9;
         }
 
         .tech-item:hover img {
-            filter: grayscale(0) opacity(1);
             transform: scale(1.1);
-            /* Add color on hover */
-            fill: #F56600;
+            opacity: 1;
+            filter: brightness(1.1);
         }
 
         .tech-item span {
@@ -328,31 +325,31 @@
     </div>
 
     <script>
-        // Updated with your actual URLs
         document.getElementById('github-link').href = 'https://github.com/NickThomas20';
         document.getElementById('linkedin-link').href = 'https://www.linkedin.com/in/nick-thomas2020/';
-        document.getElementById('resume-link').href = 'Nick_Thomas_Resume_2025.pdf'; // Update this with your resume link
+        document.getElementById('resume-link').href = 'Nick_Thomas_Resume_2025.pdf';
 
-        // Tech stack data with Simple Icons CDN (more reliable)
+        // Tech stack data with colored logos from skill-icons
         const techStack = [
-            { name: 'Java', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/openjdk.svg' },
-            { name: 'Spring Boot', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/springboot.svg' },
-            { name: 'GraphQL', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/graphql.svg' },
-            { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg' },
-            { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/typescript.svg' },
-            { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg' },
-            { name: 'PHP', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/php.svg' },
-            { name: 'HTML/CSS', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg' },
-            { name: 'JUnit', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/junit5.svg' },
-            { name: 'AWS', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazonaws.svg' },
-            { name: 'Git', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg' },
-            { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg' },
-            { name: 'Docker', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/docker.svg' },
-            { name: 'Kubernetes', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kubernetes.svg' },
-            { name: 'Postman', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postman.svg' },
-            { name: 'SonarQube', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sonarqube.svg' },
-            { name: 'Splunk', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/splunk.svg' },
-            { name: 'Grafana', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/grafana.svg' }
+            { name: 'Java', logo: 'https://skillicons.dev/icons?i=java' },
+            {name: 'SQL', logo: 'https://cdn-icons-png.freepik.com/256/17266/17266015.png?semt=ais_white_label'},
+            { name: 'Spring Boot', logo: 'https://skillicons.dev/icons?i=spring' },
+            { name: 'GraphQL', logo: 'https://skillicons.dev/icons?i=graphql' },
+            { name: 'Node.js', logo: 'https://skillicons.dev/icons?i=nodejs' },
+            { name: 'TypeScript', logo: 'https://skillicons.dev/icons?i=typescript' },
+            { name: 'JavaScript', logo: 'https://skillicons.dev/icons?i=javascript' },
+            { name: 'PHP', logo: 'https://skillicons.dev/icons?i=php' },
+            { name: 'HTML/CSS', logo: 'https://skillicons.dev/icons?i=html' },
+            { name: 'JUnit', logo: 'https://skillicons.dev/icons?i=java' },
+            { name: 'AWS', logo: 'https://skillicons.dev/icons?i=aws' },
+            { name: 'Git', logo: 'https://skillicons.dev/icons?i=git' },
+            { name: 'GitHub', logo: 'https://skillicons.dev/icons?i=github' },
+            { name: 'Docker', logo: 'https://skillicons.dev/icons?i=docker' },
+            { name: 'Kubernetes', logo: 'https://skillicons.dev/icons?i=kubernetes' },
+            { name: 'Postman', logo: 'https://skillicons.dev/icons?i=postman' },
+            { name: 'SonarQube', logo: 'https://www.svgrepo.com/show/354365/sonarqube.svg' },
+            { name: 'Splunk', logo: 'https://avatars.githubusercontent.com/u/651467?s=280&v=4' },
+            { name: 'Grafana', logo: 'https://skillicons.dev/icons?i=grafana' }
         ];
 
         // Create tech items and properly duplicate for seamless loop
