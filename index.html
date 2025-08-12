@@ -3,296 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Software Engineer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 600px;
-            padding: 60px 40px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .profile {
-            margin-bottom: 40px;
-        }
-
-        .profile h1 {
-            font-size: 2.8rem;
-            font-weight: 300;
-            color: #2c2c2c;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .profile .title {
-            font-size: 1.2rem;
-            color: #666;
-            font-weight: 400;
-            margin-bottom: 8px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 0.2s forwards;
-        }
-
-        .profile .company {
-            font-size: 1rem;
-            color: #F56600; /* Clemson Orange */
-            font-weight: 500;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 0.4s forwards;
-        }
-
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 0.6s forwards;
-        }
-
-        .link-item {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            font-size: 1.1rem;
-            padding: 15px 30px;
-            border: 2px solid transparent;
-            border-radius: 12px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        .link-item:hover {
-            color: white;
-            background: #F56600;
-            border-color: #F56600;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(245, 102, 0, 0.3);
-        }
-
-        .link-item::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background-color: #F56600;
-            transition: width 0.3s ease;
-        }
-
-        .link-item:hover::after {
-            width: 80%;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                margin: 20px;
-                padding: 40px 30px;
-            }
-            
-            .profile h1 {
-                font-size: 2.2rem;
-            }
-            
-            .links {
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
-            }
-            
-            .link-item {
-                width: 200px;
-            }
-
-            .tech-track {
-                gap: 20px;
-            }
-
-            .tech-item {
-                min-width: 60px;
-            }
-
-            .tech-item img {
-                width: 35px;
-                height: 35px;
-            }
-
-            .tech-item span {
-                font-size: 0.7rem;
-            }
-        }
-
-        /* Subtle accent line */
-        .accent-line {
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #F56600, #ff7722);
-            margin: 25px auto;
-            border-radius: 2px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 0.5s forwards;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Floating animation for container */
-        .container {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Tech Stack Section */
-        .tech-stack {
-            margin-top: 50px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 0.8s forwards;
-        }
-
-        .tech-stack h3 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: #333;
-            margin-bottom: 25px;
-        }
-
-        .tech-carousel {
-            overflow: hidden;
-            width: 100%;
-            height: 80px;
-            position: relative;
-            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-        }
-
-        .tech-track {
-            display: flex;
-            gap: 40px;
-            animation: scroll 25s linear infinite;
-            align-items: center;
-            height: 100%;
-            width: max-content;
-        }
-
-        .tech-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 80px;
-            gap: 8px;
-        }
-
-        .tech-item img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            transition: all 0.3s ease;
-            opacity: 0.9;
-        }
-
-        .tech-item:hover img {
-            transform: scale(1.1);
-            opacity: 1;
-            filter: brightness(1.1);
-        }
-
-        .tech-item span {
-            font-size: 0.8rem;
-            color: #666;
-            font-weight: 500;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-100% / 3));
-            }
-        }
-
-        /* Contact Section */
-        .contact {
-            margin-top: 50px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 1s forwards;
-        }
-
-        .contact h3 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .email-link {
-            color: #F56600;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            border: 2px solid transparent;
-            padding: 12px 24px;
-            border-radius: 12px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            background: rgba(245, 102, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .email-link:hover {
-            color: white;
-            background: #F56600;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(245, 102, 0, 0.3);
-        }
-    </style>
+    <title>Nick Thomas - Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -304,9 +16,9 @@
         </div>
         
         <div class="links">
-            <a href="#" class="link-item" id="github-link">GitHub</a>
-            <a href="#" class="link-item" id="linkedin-link">LinkedIn</a>
-            <a href="#" class="link-item" id="resume-link">Resume</a>
+            <a href="https://github.com/NickThomas20" class="link-item" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/nick-thomas2020/" class="link-item" target="_blank">LinkedIn</a>
+            <button class="link-item" id="resume-btn">Resume</button>
         </div>
 
         <div class="tech-stack">
@@ -324,92 +36,26 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('github-link').href = 'https://github.com/NickThomas20';
-        document.getElementById('linkedin-link').href = 'https://www.linkedin.com/in/nick-thomas2020/';
-        document.getElementById('resume-link').href = 'Nick_Thomas_Resume_2025.pdf';
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nick Thomas - Resume</h2>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="loading-message" id="loading-message">
+                    <div class="loading-spinner"></div>
+                    <p>Loading resume...</p>
+                </div>
+                <iframe class="resume-frame" id="resume-frame" style="display: none;"></iframe>
+            </div>
+            <a href="Nick_Thomas_Resume_2025.pdf" download class="download-btn">
+                📄 Download PDF
+            </a>
+        </div>
+    </div>
 
-        // Tech stack data with colored logos from skill-icons
-        const techStack = [
-            { name: 'Java', logo: 'https://skillicons.dev/icons?i=java' },
-            {name: 'SQL', logo: 'https://cdn-icons-png.freepik.com/256/17266/17266015.png?semt=ais_white_label'},
-            { name: 'Spring Boot', logo: 'https://skillicons.dev/icons?i=spring' },
-            { name: 'GraphQL', logo: 'https://skillicons.dev/icons?i=graphql' },
-            { name: 'Node.js', logo: 'https://skillicons.dev/icons?i=nodejs' },
-            { name: 'TypeScript', logo: 'https://skillicons.dev/icons?i=typescript' },
-            { name: 'JavaScript', logo: 'https://skillicons.dev/icons?i=javascript' },
-            { name: 'PHP', logo: 'https://skillicons.dev/icons?i=php' },
-            { name: 'HTML/CSS', logo: 'https://skillicons.dev/icons?i=html' },
-            { name: 'JUnit', logo: 'https://skillicons.dev/icons?i=java' },
-            { name: 'AWS', logo: 'https://skillicons.dev/icons?i=aws' },
-            { name: 'Git', logo: 'https://skillicons.dev/icons?i=git' },
-            { name: 'GitHub', logo: 'https://skillicons.dev/icons?i=github' },
-            { name: 'Docker', logo: 'https://skillicons.dev/icons?i=docker' },
-            { name: 'Kubernetes', logo: 'https://skillicons.dev/icons?i=kubernetes' },
-            { name: 'Postman', logo: 'https://skillicons.dev/icons?i=postman' },
-            { name: 'SonarQube', logo: 'https://www.svgrepo.com/show/354365/sonarqube.svg' },
-            { name: 'Splunk', logo: 'https://avatars.githubusercontent.com/u/651467?s=280&v=4' },
-            { name: 'Grafana', logo: 'https://skillicons.dev/icons?i=grafana' }
-        ];
-
-        // Create tech items and properly duplicate for seamless loop
-        function createTechCarousel() {
-            const techTrack = document.getElementById('tech-track');
-            
-            // Create three sets for truly seamless scrolling
-            const allTech = [...techStack, ...techStack, ...techStack];
-            
-            allTech.forEach(tech => {
-                const techItem = document.createElement('div');
-                techItem.className = 'tech-item';
-                
-                const img = document.createElement('img');
-                img.src = tech.logo;
-                img.alt = tech.name;
-                img.title = tech.name;
-                
-                // Add error handling for broken images
-                img.onerror = function() {
-                    // Create a fallback with colored background and text
-                    const fallback = document.createElement('div');
-                    fallback.style.cssText = `
-                        width: 40px;
-                        height: 40px;
-                        background: linear-gradient(135deg, #F56600, #ff7722);
-                        border-radius: 8px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        font-weight: bold;
-                        font-size: 12px;
-                        text-align: center;
-                        line-height: 1;
-                        flex-shrink: 0;
-                    `;
-                    // Use first 2 characters or common abbreviations
-                    const abbrev = tech.name === 'JavaScript' ? 'JS' : 
-                                  tech.name === 'TypeScript' ? 'TS' :
-                                  tech.name === 'HTML/CSS' ? 'H5' :
-                                  tech.name === 'Node.js' ? 'N' :
-                                  tech.name === 'Spring Boot' ? 'SB' :
-                                  tech.name === 'GitHub Actions' ? 'GA' :
-                                  tech.name.substring(0, 2).toUpperCase();
-                    fallback.textContent = abbrev;
-                    this.parentNode.replaceChild(fallback, this);
-                };
-                
-                const span = document.createElement('span');
-                span.textContent = tech.name;
-                
-                techItem.appendChild(img);
-                techItem.appendChild(span);
-                techTrack.appendChild(techItem);
-            });
-        }
-
-        // Initialize carousel when page loads
-        document.addEventListener('DOMContentLoaded', createTechCarousel);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
